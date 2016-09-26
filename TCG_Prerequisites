@@ -1,2 +1,16 @@
-TCG to organizacja, która tworzy i rozwija otwarte standardy
-bezpieczeństwa 
+1.1
+TCG to organizacja, która tworzy i rozwija otwarte standardy.
+Dotyczą one bezpieczeństwa systemów komputerowych. 
+Dla przykładu TCG publikuje grupy powiązanch ze sobą opisów 
+technicznych, które definiują procedury bezpieczeństwa.
+Te procedury dotyczą:
+-bootowania
+-zarządzania konfiguracją
+-bezpiecznego wykonywania aplikacji
+Oryginalnie te opisy techniczne były napisane odnośnie komputerów PC.
+TCG teraz rozszerza swoje rozwiązania do technologii mobilnych i
+systemów wbudowanych. 
+Na stronie internetowej www.trustedcomputinggroup.org, wiele różnych
+informacji wraz z statusem i notkami prasowymi. 
+
+1.2
