@@ -1,4 +1,4 @@
-1.1
+1.1 Trusted Computing Group
 TCG to organizacja, która tworzy i rozwija otwarte standardy.
 Dotyczą one bezpieczeństwa systemów komputerowych. 
 Dla przykładu TCG publikuje grupy powiązanch ze sobą opisów 
@@ -13,4 +13,26 @@ systemów wbudowanych.
 Na stronie internetowej www.trustedcomputinggroup.org, wiele różnych
 informacji wraz z statusem i notkami prasowymi. 
 
-1.2
+1.2 Zestaw opisów technicznych (Specification suite)
+Jednym z pierwszych dokumentów z którymi należy się zapoznać jest 
+przegląd architektury, który zawiera informacje odnośnie celów grupy
+TCG oraz architektury systemu bezpieczeństwa.
+Dodatkowo mamy dwie wersje specyfikacji bezpieczeństwa 1.1b oraz 1.2. 
+1.1b jest w użyciu od kilku lat. Zawiera w sobie wiele wyborów
+dotyczących TPM: BIOS, TSS oraz zestawy aplikacji.
+TCG ma wiele opisów technicznych dotyczących zestawu 1.1b i każdy
+adresuje innym aspektom bezpieczeństwa systemu. 
+
+Wersja 1.2 jest ciągle definiowana. Może być opisana jako nadzbiór 1.1b
+zawierająca przestarzałe funkcje poprzedniej wersji. Dlatego studiowanie
+wersji 1.1b ma sens - będzie można użyć 'legacy mode' w wersji 1.2 i 
+zadziała. Od momentu w którym książka odnosi się do systemów wbudowanych
+interesuje nas głównie "Main Specification".
+
+TCG określa zestaw opisów technicznych v1.1b. Każdy z nich definiuje 
+zestaw funkcji, które połączone z innymi tworzą całościowy system 
+bezpieczeństwa oparty o urządzenie TPM. Różne wersje 1.1 zawierają:
+Main Specification, Software Stack Specification, PC Specific 
+Specification. W dodatku, pliki nagłówkowe napisane w C zawierające
+Software Stack Specification. 
+Main specification zawiera 
