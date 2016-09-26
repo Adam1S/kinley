@@ -36,3 +36,16 @@ Main Specification, Software Stack Specification, PC Specific
 Specification. W dodatku, pliki nagłówkowe napisane w C zawierające
 Software Stack Specification. 
 Main specification zawiera: architekturę i definicje komend.
+Inne opisy techniczne zestawiają funkcje z typowymi zapotrzebowaniami
+na bezpieczeństwo w systemach wbudowanych.
+
+TSS i PC Specific Specification są również opisane w sprawie migracji
+ich do systemów wbudowanych. Mając w głowie, że pomimo te opisy tech. są
+skonstruowane z myślą o PC to można je bezpośrednio/lub po dostosowaniu
+użyć w systemach wbodowanych.
+Opis techniczny (Specification) jest opisywana najpierw dla PC, potem
+embeeded. 
+
+1.3 Funkcje charakterystyczne dla PC, a systemy wbudowane
+v1.1 dotyczy środowiska bootowania na PC, które może użyć BIOS z 
+pamięcią lub bez pamięci. 
