@@ -84,4 +84,29 @@ Nasze rozważania odniesiemy do Atmel AT97SC3201.
 Pierwszą funkcją wykorzystywaną dla BIOSu bez pamięci jest MAInitTPM.
 Zawiera ona w sobie TPM_StartUp oraz TPM_ContinueSelfTest.
 
+MAInitTPM driver
+v1.1 PC Specific Specification mówi, że TPM musi być zastartowany, ale 
+nie określa w jaki sposób.
+Większość producentów korzysta z SMBus (Atmel też), zamiast z LPC.
 
+Diagram 1.1 z książki
+Na początku status register musi być sprawdzony, żeby dowiedzieć się czy
+TPM jest w stanie przyjąć jakąkolwiek zmianę konfiguracji/komendę TCG.
+Sprawdza się to przez odczytanie LPC I/O baseAddress+1, który utożsamia
+wartość hex 4F. Jeżeli status register zwróci wartość hex BC, wtedy TPM
+nie jest jeszcze gotowy(LPC). W przypadku SMBus urządzenie zwróci 0x52 
+jeżeli nie jest gotowe. 0x52=Not Acknownledge (NAK).
+
+SMBus będzie lepiej opisany w tej książce niż LPC.
+
+MADriver zwraca się do urządzenia przez komendy TCG. 
+Jeżeli TPM akceptuje komende odpowiada "ACK", jeżeli nie to "NAK".
+ACK znaczy również, że urządzenie jest dostępne i odpowiada.
+
+Zadaniem MAInitTPM driver jest uruchomienie TPM i sprawdzenie 
+komunikacji z nim.
+
+========================================================================
+MAHashAllExtendTPM driver
+Ta funkcja dotyczy PCR. PCR może być rozszerzany i aktualizowany.
+Opis funkcjonalny odnośnie tego drivera w diagramie 1.2.
