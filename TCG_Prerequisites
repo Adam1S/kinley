@@ -35,4 +35,4 @@ bezpieczeństwa oparty o urządzenie TPM. Różne wersje 1.1 zawierają:
 Main Specification, Software Stack Specification, PC Specific 
 Specification. W dodatku, pliki nagłówkowe napisane w C zawierające
 Software Stack Specification. 
-Main specification zawiera 
+Main specification zawiera: architekturę i definicje komend.
