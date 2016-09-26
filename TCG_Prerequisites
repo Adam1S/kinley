@@ -48,4 +48,40 @@ embeeded.
 
 1.3 Funkcje charakterystyczne dla PC, a systemy wbudowane
 v1.1 dotyczy środowiska bootowania na PC, które może użyć BIOS z 
-pamięcią lub bez pamięci. 
+pamięcią lub bez pamięci. Interesującym aspektem w odniesieniu do tej
+specyfikacji(opisu technicznego) i projektu wbudowanego, inżynierowie
+musieli poradzić sobie z TPM initial state oraz rozszerzeniem PCR, 
+których funkcjonalność jest opisana w PC Specific Specification.
+
+Kluczowym problemem dla embedded design było przeniesienie 
+funkcjonalności związanej z BIOSem. Ten podrozdział opisuje wymagania
+bootstrapu dotyczące 'TPM initial State' oraz skrótów PCR. 
+Zauważ, że PCR nie są koniecznie wymagane, ale są polecane. 
+
+Pierwszy problem to inicjalizacja TPMu. Ma ona dużo opcji. 
+TPM_StartUp to komenda, która zwykle jest wysyłana to TPM jako pierwsza
+po uruchomieniu systemu lub po wyjściu systemu z hibernacji.
+
+Są trzy modyfikatowy, które mogą zmienić stan urządzenia TPM podczas 
+TPM_StartUp:
+-default
+-state 
+-disabled
+
+BIOS albo bootstrap(czyli embedded) jest odpowiedzialny za decyzję
+w jaki stan wejść. Więcej szczegółów w rozdziale 11.
+
+TPM_StartUp przywołuje funkcję częściowego self-testu, a potem oczekuje
+na funkcję TPM_ContinueSelfTest. Jeżeli zostanie wywołana jakakolwiek
+inna funkcja TPM_ContinueSelfTest zostanie przerwana, a zostanie 
+zwrócony komunikat błędu TPM_RETRY.
+Ta informacja jest istotna dla BIOSu/bootstrapa.
+System operacyjny/wbudowany oczekuje na kontynuacje self-testu.
+(może czeka aż się sprawdzą PCR? i konf. programowa?)
+
+Następne podrozdziały opiszą cztery funkcje.
+Nasze rozważania odniesiemy do Atmel AT97SC3201.
+Pierwszą funkcją wykorzystywaną dla BIOSu bez pamięci jest MAInitTPM.
+Zawiera ona w sobie TPM_StartUp oraz TPM_ContinueSelfTest.
+
+
