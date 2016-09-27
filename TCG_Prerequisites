@@ -110,3 +110,35 @@ komunikacji z nim.
 MAHashAllExtendTPM driver
 Ta funkcja dotyczy PCR. PCR może być rozszerzany i aktualizowany.
 Opis funkcjonalny odnośnie tego drivera w diagramie 1.2.
+
+Jednostka wywołująca, czyli np. BIOS dostarczy parametr adresu bloku 
+startowego danego wpisu PCR oraz długość bloku danych z którego będzie 
+skrót oraz index(który PCR[]);
+=======================================================================
+MAPhysicalPresenceTPM driver
+Opisany dokładniej w rozdziale 11.
+=======================================================================
+MemoryPresent (MP driver)
+Ma swoje 4 funkcje, ale tylko jedna z nich może być użyta w systemach 
+wbudowanych. Ich opisy są w PC Specific Specification.
+We wbudowanych raczej wykorzystuje się MA i TDDL(Trusted Device Driver
+Layer).
+
+TSS v1.1
+Ważne dla wbudowanych! Daje wgląd w konstrukcję Security Software Stack,
+które daje nam warstwę abstrakcji dla TPM command interface.
+Podczas integrowania TPM w jakikolwiek system, nie tylko użyjesz funkcji
+TPM. Będziesz korzystał również z fukcji kryptograficznych. 
+Niektórzy producenci TPM dostarczają helpery, które powiększają zestaw 
+komend. Przed jakimikolwiek próbami tworzenia TSS na wbudowane 
+skontaktuj się z producentem TPM, który może udzielić informacji
+o pewnych funkcjach upraszczających.
+
+Podsumowując: TCG jest nieocenionym źródłem danych o rozwiązaniach z TPM
+Na stronie mamy wiele opisów technicznych, artykułów itd. o architekturze
+systemów itd...
+
+Można stać się członkiem TCG. Szczególnie niech Cię to interesuje jeśli
+zajmujesz się technologiami mobilnymi. Są grupy dyskusyjne o tym. 
+
+
